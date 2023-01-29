@@ -1,2 +1,20 @@
-# UFM_Data_Structures_2023
-University: Universidad Francisco Marroquín
+# UFM - Data Structures (2023)
+
+Code resources and activities for the Data Structures course at Universidad Francisco Marroquín. 
+
+
+### Syllabus
+
+* Arrays
+
+
+
+
+
+
+
+
+
+
+
+
