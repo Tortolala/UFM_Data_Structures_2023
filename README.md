@@ -5,16 +5,5 @@ Code resources and activities for the Data Structures course at Universidad Fran
 
 ### Syllabus
 
-* Arrays
-
-
-
-
-
-
-
-
-
-
-
-
+* [Arrays](https://github.com/Tortolala/UFM_Data_Structures_2023/tree/master/arrays)
+* [Stacks](https://github.com/Tortolala/UFM_Data_Structures_2023/tree/master/stacks)
