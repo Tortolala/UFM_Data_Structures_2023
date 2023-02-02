@@ -33,7 +33,7 @@ Create a new version of the class definition and make the following modification
 
 Create a new version of the class definition (based on the class definition resulting from the previous exercise). Then:
 
-1) Modify the class definition so the elements in the stack are integers.
+1) Modify the class definition so the elements stored in the stack are integers.
 
 2) In `test.py`, create a list of size 10 filled with sample numbers.
 
