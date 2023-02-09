@@ -1,7 +1,16 @@
 
 class LinearQueue:
     '''
-    
+    Queue object, array-based implementation.
+
+    Args:
+        size (int): size of underlying array
+
+    Attributes:
+        elements (List): array of elements
+        front (int): pointer at front
+        rear (int): pointer at rear
+        max (int): maximum amount of elements in queue
     '''
 
     def __init__(self, size: int) -> None:
@@ -17,6 +26,13 @@ class LinearQueue:
 
     def enqueue(self, value: str) -> None:
         '''
+        Inserts element into the queue.
+
+        Args:
+            value (str): value to be enqueued
+
+        Returns:
+            None
         '''
 
         if self.rear == self.max - 1:
@@ -34,6 +50,13 @@ class LinearQueue:
 
     def dequeue(self) -> str:
         '''
+        Deletes element from the queue.
+
+        Args:
+            None
+
+        Returns:
+            value (str): value of element dequeued
         '''
 
         if self.front == -1 or self.front > self.rear:
