@@ -39,6 +39,6 @@ queue.dequeue() # Queue Underflow (1st scenario)
 
 print('Search A:', queue.search('A'))
 
-val = queue.dequeue()
+val = queue.dequeue() #dequeue
 print(queue)
-print('Element dequeue: {}'.format(val))
+print('Element dequeue: {}'.format(val)) 
