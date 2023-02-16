@@ -1,17 +1,4 @@
-
-class LinearQueue:
-    '''
-    Queue object, array-based implementation.
-
-    Args:
-        size (int): size of underlying array
-
-    Attributes:
-        elements (List): array of elements
-        front (int): pointer at front
-        rear (int): pointer at rear
-        max (int): maximum amount of elements in queue
-    '''
+class CircularQueue:
 
     def __init__(self, size: int) -> None:
         self.elements = [None] * size
@@ -19,51 +6,51 @@ class LinearQueue:
         self.rear = -1
         self.max = size
 
-
     def __repr__(self) -> None:
         return 'Current queue: {} | Front: {} | Rear: {}'.format(self.elements, self.front, self.rear)
 
+    def is_empty(self) -> bool:
+        # Check if the front and rear pointers are -1, which indicates an empty queue
+        return self.front == -1 and self.rear == -1
+
+    def is_full(self) -> bool:
+        # Check if the next position of the rear pointer (using modulo to "wrap around" the queue)
+        # is equal to the front pointer, which indicates a full queue
+        return (self.rear + 1) % self.max == self.front
 
     def enqueue(self, value: str) -> None:
-        '''
-        Inserts element into the queue.
-
-        Args:
-            value (str): value to be enqueued
-
-        Returns:
-            None
-        '''
-
-        if self.rear == self.max - 1:
+        if self.is_full():
+            # If the queue is full, print an error message and return None
             print("Queue Overflow...")
             return None
         
-        if self.front == -1 and self.rear == -1:
+        if self.is_empty():
+            # If the queue is empty, set both the front and rear pointers to 0
             self.front = 0
-            self.rear = 0
-        else:
-            self.rear += 1
 
+        # Update the rear pointer using modulo to "wrap around" the queue when it reaches the end
+        self.rear = (self.rear + 1) % self.max
         self.elements[self.rear] = value
         
-
     def dequeue(self) -> str:
-        '''
-        Deletes element from the queue.
-
-        Args:
-            None
-
-        Returns:
-            value (str): value of element dequeued
-        '''
-
-        if self.front == -1 or self.front > self.rear:
+        if self.is_empty():
             print('Queue Underflow...')
             return None
 
         value = self.elements[self.front]
-        self.elements[self.front] = None # (Optional)
-        self.front += 1
+        self.elements[self.front] = None
+        if self.front == self.rear:
+            self.front = -1
+            self.rear = -1
+        else:
+            self.front = (self.front + 1) % self.max
+
         return value
+
+    def search(self, key):
+        return key in self.elements
+
+    def peek(self)-> str:
+        if self.is_empty():
+            return None
+        return self.elements[self.front]
