@@ -19,10 +19,8 @@ class LinearQueue:
         self.rear = -1
         self.max = size
 
-
     def __repr__(self) -> None:
         return 'Current queue: {} | Front: {} | Rear: {}'.format(self.elements, self.front, self.rear)
-
 
     def enqueue(self, value: str) -> None:
         '''
@@ -38,7 +36,7 @@ class LinearQueue:
         if self.rear == self.max - 1:
             print("Queue Overflow...")
             return None
-        
+
         if self.front == -1 and self.rear == -1:
             self.front = 0
             self.rear = 0
@@ -46,7 +44,6 @@ class LinearQueue:
             self.rear += 1
 
         self.elements[self.rear] = value
-        
 
     def dequeue(self) -> str:
         '''
@@ -64,6 +61,27 @@ class LinearQueue:
             return None
 
         value = self.elements[self.front]
-        self.elements[self.front] = None # (Optional)
+        self.elements[self.front] = None  # (Optional)
         self.front += 1
         return value
+    
+    #Función de busqueda
+
+    def search(self, key: str) -> int:
+
+        for i in range(self.front, self.rear + 1):
+            if self.elements[i] == key:
+                return i
+
+        return -1 
+
+
+    #Funcion de peek
+    
+    def peek(self) -> str:
+
+        if self.front == -1 or self.front > self.rear:
+            print("Queue Underflow")
+            return None
+
+        return self.elements[self.front]
