@@ -82,3 +82,4 @@ class LinearQueue:
             return None
 
         return self.elements[self.front]
+
