@@ -14,6 +14,7 @@ class Stack:
     def __init__(self, size: int):
         self.elements = [None] * size
         self.top = -1
+        self.max = size
 
     
     def __repr__(self):
@@ -35,7 +36,8 @@ class Stack:
         '''
 
         if self.top == len(self.elements) - 1:
-            raise Exception('Stack overflow')
+            print('Stack overflow :(')
+            return None
 
         self.top += 1
         self.elements[self.top] = value
@@ -56,7 +58,8 @@ class Stack:
         '''
 
         if self.top == -1:
-            raise Exception('Stack underflow')
+            print('Stack underflow :(')
+            return None
         
         value = self.elements[self.top]
         self.elements[self.top] = None # (Optional)
@@ -75,7 +78,16 @@ class Stack:
             value (str): value of element peeked
         '''
         if self.top == -1:
-            return 'Stack is empty'
+            print('Stack underflow :(')
+            return None
         
         value = self.elements[self.top]
         return value
+
+    def search(self, key:str) -> int:
+
+        for i in range(self.top + 1):
+            if self.elements[i] == key:
+                return i
+
+        return -1
