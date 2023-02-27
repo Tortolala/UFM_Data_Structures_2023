@@ -1,6 +1,5 @@
-
+'''
 class LinearQueue:
-    '''
     Queue object, array-based implementation.
 
     Args:
@@ -11,7 +10,6 @@ class LinearQueue:
         front (int): pointer at front
         rear (int): pointer at rear
         max (int): maximum amount of elements in queue
-    '''
 
     def __init__(self, size: int) -> None:
         self.elements = [None] * size
@@ -25,7 +23,7 @@ class LinearQueue:
 
 
     def enqueue(self, value: str) -> None:
-        '''
+   
         Inserts element into the queue.
 
         Args:
@@ -33,7 +31,8 @@ class LinearQueue:
 
         Returns:
             None
-        '''
+            
+ 
 
         if self.rear == self.max - 1:
             print("Queue Overflow...")
@@ -49,7 +48,7 @@ class LinearQueue:
         
 
     def dequeue(self) -> str:
-        '''
+
         Deletes element from the queue.
 
         Args:
@@ -57,8 +56,7 @@ class LinearQueue:
 
         Returns:
             value (str): value of element dequeued
-        '''
-
+   
         if self.front == -1 or self.front > self.rear:
             print('Queue Underflow...')
             return None
@@ -67,3 +65,31 @@ class LinearQueue:
         self.elements[self.front] = None # (Optional)
         self.front += 1
         return value
+    '''
+class Elemento: 
+    def __init__ (self, key, valor): 
+        self.key = key 
+        self.valor = valor
+        
+class Cola: 
+    def __init__(self): 
+        self.elementos=[]
+        
+    def encolar(self, key, valor): 
+        nuevo_elemento= Elemento(key, valor)
+        self.elementos.append(nuevo_elemento)
+            
+    def desencolar (self): 
+        if not self.esta_vacia(): 
+            return self.elementos.pop(0)
+        else:
+            return None
+            
+    def esta_vacia(self): 
+        return len(self.elementos) == 0 
+        
+    def buscar (self, key): 
+        for elemento in self.elementos: 
+            if elemento.key == key: 
+                return elemento.valor
+            return None  
