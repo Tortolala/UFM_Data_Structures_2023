@@ -3,7 +3,6 @@
 The file `stack.py` contains the class definition of the object: *Stack*. While `test.py` holds a few operations done to demonstrate the functionality of the data structure.
 
 ## Complexities
-___
 
 | Method   | Time complexity | Space complexity |
 |----------|-----------------|------------------|
@@ -14,7 +13,6 @@ ___
 
 
 ## Activities
-___
 
 ### **Exercise #1: Class improvements**
 

@@ -3,7 +3,6 @@
 The file `queue.py` contains the class definition of the object: *Queue*. While `test.py` holds a few operations done to demonstrate the functionality of the data structure.
 
 ## Complexities
-___
 
 | Method       | Time complexity | Space complexity |
 |--------------|-----------------|------------------|
@@ -12,7 +11,6 @@ ___
 | search()     | O(n)            | O(n)             |
 
 ## Activities
-___
 
 ### **Exercise #1: Class improvements**
 

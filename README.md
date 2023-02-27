@@ -8,3 +8,4 @@ Code resources and activities for the Data Structures course at Universidad Fran
 * [Arrays](https://github.com/Tortolala/UFM_Data_Structures_2023/tree/master/arrays)
 * [Stacks](https://github.com/Tortolala/UFM_Data_Structures_2023/tree/master/stacks)
 * [Queues](https://github.com/Tortolala/UFM_Data_Structures_2023/tree/master/queues)
+* [Linked Lists](https://github.com/Tortolala/UFM_Data_Structures_2023/tree/master/linked_lists)
