@@ -77,7 +77,40 @@ class Playlist:
                 return
             current = current.next_node
         print("No se encontró la canción.")
- 
+        
+    def search_by_artist(self, artist):
+        current_node = self.head
+        matching_songs = []
+
+        while current_node is not None:
+            if current_node.data.artist == artist:
+                matching_songs.append(current_node.data.title)
+            current_node = current_node.next_node
+
+        if len(matching_songs) == 0:
+            print(f"No se encontraron canciones del artista {artist} en la playlist.")
+        else:
+            print(f"Canciones del artista {artist}:")
+            for song in matching_songs:
+                print(f"- {song}")
+
+        return matching_songs
+    
+    def delete(self, reference_node: str):
+            if self.start is None:
+                print('Empty linked list...')
+                return
+            if self.start.data.name == reference_node:
+                self.start = self.start.next
+                return
+            previous_node = self.start
+            for current_node in self:
+                if current_node.data.name == reference_node:
+                    previous_node.next = current_node.next
+                    return
+                previous_node = current_node
+            print('Reference node {} not found in linked list...'.format(reference_node))
+
     
 
 
