@@ -12,7 +12,6 @@ my_playlist.insert_at_end(Node(song2))
 song3 = Song(3, "Fuera del Mercado", "Danny Ocean", "Fuera del Mercado")
 my_playlist.insert_at_end(Node(song3))
 
-
 print("Canciones en la Playlist:", my_playlist.playlist_len())
 
 # primera cancion
