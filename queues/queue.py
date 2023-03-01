@@ -92,4 +92,4 @@ class Cola:
         for elemento in self.elementos: 
             if elemento.key == key: 
                 return elemento.valor
-            return None  
+            return None 
