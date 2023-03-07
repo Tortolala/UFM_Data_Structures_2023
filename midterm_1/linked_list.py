@@ -54,6 +54,16 @@ class LinkedList:
 
         nodes.append("NIL")
         return " --> ".join(nodes)
+    
+
+    def __len__(self):
+
+        length = 0
+
+        for _ in self:
+            length += 1
+
+        return length
 
 
     def traverse(self):
@@ -114,7 +124,7 @@ class LinkedList:
         Returns:
             None
         '''
-        # print('Start: ', self.start)
+
         if self.start is None:
             self.start = new_node
 
