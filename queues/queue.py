@@ -67,3 +67,17 @@ class LinearQueue:
         self.elements[self.front] = None # (Optional)
         self.front += 1
         return value
+    
+    def search(self, key: str) -> int:
+        
+        for i in range(self.front, self.rear + 1):
+            if self.elements[i] == key:
+                return i
+        return -1
+    
+    def peek(self) -> str:
+
+        if self.rear == self.max -1:
+            print('Queue overflow... :(')
+            return None
+        return self.elements[self.front]
