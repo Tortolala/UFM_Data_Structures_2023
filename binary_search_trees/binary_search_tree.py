@@ -129,3 +129,15 @@ class BinarySearchTree:
             subtree.right_child = self._delete(subtree.right_child, temp.data)
  
         return subtree
+    
+    def print_tree(self, traversal_type):
+        if traversal_type == "inorder":
+            return self._inorder_print(self.root, "")
+        
+
+    def _inorder_print(self, current_node, traversal):
+        if current_node:
+            traversal = self._inorder_print(current_node.left_child, traversal)
+            traversal += (str(current_node.data) + "-")
+            traversal = self._inorder_print(current_node.right_child, traversal)
+        return traversal
