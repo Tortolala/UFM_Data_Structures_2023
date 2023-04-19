@@ -96,3 +96,48 @@ class BinarySearchTree:
             subtree = subtree.right_child
 
         return subtree
+    
+    def delete(self, key: int) -> Node:
+        self.root = self._delete(self.root, key)
+        return self.root
+    
+    def _delete(self, subtree: Node, key: int) -> Node:
+        if subtree is None:
+            return subtree
+        
+        if key < subtree.data:
+            subtree.left_child = self._delete(subtree.left_child, key)
+ 
+        elif key > subtree.data:
+            subtree.right_child = self._delete(subtree.right_child, key)
+ 
+        else:
+            # Node has one or no child
+            if subtree.left_child is None:
+                temp = subtree.right_child
+                subtree = None
+                return temp
+ 
+            elif subtree.right_child is None:
+                temp = subtree.left_child
+                subtree = None
+                return temp
+ 
+            # Node has two children
+            temp = self.find_min(subtree.right_child)
+            subtree.data = temp.data
+            subtree.right_child = self._delete(subtree.right_child, temp.data)
+ 
+        return subtree
+    
+    def print_tree(self, traversal_type):
+        if traversal_type == "inorder":
+            return self._inorder_print(self.root, "")
+        
+
+    def _inorder_print(self, current_node, traversal):
+        if current_node:
+            traversal = self._inorder_print(current_node.left_child, traversal)
+            traversal += (str(current_node.data) + "-")
+            traversal = self._inorder_print(current_node.right_child, traversal)
+        return traversal
