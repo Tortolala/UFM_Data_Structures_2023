@@ -41,3 +41,14 @@ for key in test_keys:
 print('\n*** Searching for min-max in Tree ***\n')
 print('Min: {}'.format(bst.find_min(bst.root)))
 print('Max: {}'.format(bst.find_max(bst.root)))
+
+# Delete
+print('\n** Delete in Tree **\n')
+
+
+
+bst.delete(10)
+bst.delete(50)
+bst.delete(5)
+
+print(bst.print_tree("inorder"))
